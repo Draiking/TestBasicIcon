@@ -1,0 +1,31 @@
+<div class="wrapper-input">
+  <input type="text" placeholder="Введите текст для поиска" [(ngModel)]="search">
+</div>
+
+<div class="example-button-row wrapper-button">
+  <button mat-raised-button class="gray" (click)="changeColor('')">Default</button>
+  <button mat-raised-button class="blue" (click)="changeColor('blue')">Blue</button>
+  <button mat-raised-button class="green" (click)="changeColor('green')">Green</button>
+  <button mat-raised-button class="red" (click)="changeColor('red')">Red</button>
+  <button mat-raised-button class="orange" (click)="changeColor('orange')">Orange</button>
+</div>
+
+<mat-accordion>
+  <ng-container *ngFor="let key of keys">
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h5>Size: {{resultIcons[key].title}}</h5>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="wrapper d-grid">
+        <ng-container *ngFor="let icon of resultIcons[key].icons | search: search">
+          <div class="wrapper-icons d-flex">
+            <span class="icon" [attr.fill]="" [innerHTML]=" icon.src | safe "></span>
+            <span>{{icon.title}}</span>
+          </div>
+        </ng-container>
+      </div>
+    </mat-expansion-panel>
+  </ng-container>
+</mat-accordion>

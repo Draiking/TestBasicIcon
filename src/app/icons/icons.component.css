@@ -1,0 +1,48 @@
+.d-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    grid-column-gap: 80px;
+    grid-row-gap: 30px;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
+
+.wrapper-input {
+    padding: 10px 0 0 10px;
+}
+
+.wrapper-button {
+    padding: 10px 0 10px 10px;
+}
+
+.gray {
+    background-color: gray;
+    color: white;
+}
+
+.blue {
+    background-color: blue;
+    color: white;
+}
+
+.green {
+    background-color: green;
+    color: white;
+}
+
+.red {
+    background-color: red;
+    color: white;
+}
+
+.orange {
+    background-color: orange;
+    color: white;
+}
