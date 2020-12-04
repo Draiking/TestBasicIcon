@@ -35,9 +35,7 @@ export class IconsComponent implements OnInit {
         width: res
       });
     })
-
      _.each(this.icons,(icon) => {
-       
        if(!this.resultIcons[icon.width] || (this.resultIcons[icon.width] && !this.resultIcons[icon.width].icons) ) {
         this.resultIcons[icon.width] = {
           icons: [],
@@ -47,7 +45,6 @@ export class IconsComponent implements OnInit {
        }
        this.resultIcons[icon.width].icons.push(icon)
     })
-
     this.keys.sort((a, b) => {
       return a - b;
     });
